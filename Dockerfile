@@ -2,7 +2,8 @@
 FROM alpine:latest
 # 镜像的作者
 MAINTAINER xiekong <345833303@qq.com>
- 
+# 更新并升级包列表
+RUN apk update
 # Alpine安装 Glibc https://github.com/sgerrand/alpine-pkg-glibc
 RUN apk add --no-cache ca-certificates curl openssl binutils xz tzdata && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
